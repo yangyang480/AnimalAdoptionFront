@@ -20,7 +20,7 @@ body {
   padding-top: 40px;
   color: #ea5aa9;
   text-align: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: sans-serif;
   font-weight: bold;
   font-size: 23px;
 }
@@ -31,7 +31,7 @@ body {
   color: rgb(38, 50, 56);
   background: rgba(237, 174, 174, 0.2);
   font-weight: 700;
-  font-family: "Ubuntu", sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   margin-left: 46px;
   letter-spacing: 1px;
@@ -60,7 +60,7 @@ body {
   padding-right: 40px;
   padding-bottom: 10px;
   padding-top: 10px;
-  font-family: "Ubuntu", sans-serif;
+  font-family: sans-serif;
   font-size: 13px;
   margin-left: 35%;
   cursor: pointer;
@@ -82,7 +82,7 @@ a:hover {
 }
 
 .create-new {
-  font-family: "Ubuntu", sans-serif;
+  font-family: sans-serif;
   text-align: center;
 }
 
