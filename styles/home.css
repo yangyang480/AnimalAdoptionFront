@@ -6,3 +6,7 @@
   background-color: #f4d3cf;
 }
 
+.card img {
+  width: 100%;
+  height: auto;
+}
