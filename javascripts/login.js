@@ -9,5 +9,6 @@ function validate() {
         alert("No space please");
         return false;
     };
-    return true;
+
+    window.location.href = 'home.html';
 };
