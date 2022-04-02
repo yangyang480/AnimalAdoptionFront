@@ -50,8 +50,10 @@
                 <div class="col-8"></div>
                 <div class="col-4">
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            id="hospitalSearchBox">
+                        <button class="btn btn-outline-success" type="submit"
+                            onclick="searchHospitals()">Search</button>
                     </form>
                 </div>
             </div>
@@ -91,7 +93,7 @@
         },
         {
             "id": "3",
-            "name": "Animal Savior",
+            "name": "Pet and Vet",
             "link": ""
         },
         {
@@ -130,16 +132,29 @@
             "link": ""
         }];
 
-        function loadHospitalData() {
+        function loadHospitalData(searchTerm, notFoundCallback) {
             var tableTbodyInnerHTML = "";
 
             hospitalData.forEach(value => {
-                tableTbodyInnerHTML += "<tr><th scope='row'>" + value.id + "</th><td>" + value.name + "</td><td><a href='#'>link" + value.link + "</a></td></tr>"
+                if (searchTerm === undefined || value.name.search(searchTerm) != -1) {
+                    tableTbodyInnerHTML += "<tr><th scope='row'>" + value.id + "</th><td>" + value.name + "</td><td><a href='#'>link" + value.link + "</a></td></tr>"
+                }
             });
             document.getElementById('hospitalTable').getElementsByTagName('tbody')[0].innerHTML = tableTbodyInnerHTML;
+
+            if (tableTbodyInnerHTML === "") {
+                notFoundCallback();
+            }
+        }
+        function searchHospitals() {
+            var searchTerm = document.getElementById('hospitalSearchBox').value;
+            loadHospitalData(searchTerm, noHospitalFoundCallback);
+        }
+        function noHospitalFoundCallback() {
+            alert("No hospitals found.");
         }
 
-        loadHospitalData();
+        loadHospitalData("", () => {});
     </script>
 
 </body>
