@@ -1,4 +1,6 @@
 body {
+  margin: 0 auto;
+  padding: 0;
   background-image: url("../images/04.png");
   background-color: #f4ebf4;
 }
@@ -36,7 +38,6 @@ body {
   font-weight: 700;
   font-family: sans-serif;
   font-size: 14px;
-  margin-left: 46px;
   letter-spacing: 1px;
   padding: 10px 20px;
   outline: none;
@@ -44,11 +45,16 @@ body {
   border-radius: 20px;
   border: 2px solid rgba(0, 0, 0, 0.02);
   text-align: center;
-  margin-bottom: 27px;
+  margin: 0 auto;
 }
 
 .form {
   padding-top: 40px;
+  text-align: center;
+}
+
+.form-field {
+  margin-bottom: 25px;
 }
 
 .username:focus,
@@ -65,7 +71,6 @@ body {
   padding-top: 10px;
   font-family: sans-serif;
   font-size: 13px;
-  margin-left: 35%;
   cursor: pointer;
   border-radius: 5em;
 }
@@ -99,4 +104,39 @@ a:hover {
 
 .create-new p {
   color: #716d71;
+}
+
+.invalid-feedback {
+  display: none;
+  font-family: sans-serif;
+  width: 100%;
+  margin-top: 0.25rem;
+  color: #dc3545;
+  font-size: small;
+}
+
+#homeLink:hover {
+  color: #ea5aa9;
+}
+
+.hover-text {
+  visibility: hidden;
+  flex-direction: row;
+}
+
+#homeLink:hover ~ .hover-text {
+  visibility: visible;
+  color: #9a9196;
+}
+
+#iconHomeContainer {
+  display: flex;
+  text-align: left;
+}
+
+#iconHomeContainer #iconHomeWhitespace,
+#iconHomeContainer .hover-text {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding-left: 0.5em;;
 }

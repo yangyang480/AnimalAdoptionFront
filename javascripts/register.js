@@ -11,12 +11,20 @@ function validate() {
     document.getElementById("emptyEmail").style.display = "block";
     //instead of alert we call the block from the html
   }
+  if (email && !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
+    isValid = false;
+    document.getElementById("emailNoAnnotation").style.display = "block";
+  }
 
   // Validate Password
   var password = document.getElementById("password").value;
   if (!password) {
     isValid = false;
     document.getElementById("emptyPassword").style.display = "block";
+  }
+  if (password && !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(password)) {
+    isValid = false;
+    document.getElementById("passwordTooLong").style.display = "block";
   }
 
   var confirmPassword = document.getElementById("confirmPassword").value;
@@ -67,12 +75,20 @@ function validate() {
     isValid = false;
     document.getElementById("emptyZipcode").style.display = "block";
   }
+  if (Zipcode && !/^\d{5}(-\d{4})?$/.test(Zipcode)) {
+    isValid = false;
+    document.getElementById("zipNot5Digits").style.display = "block";
+  }
 
   // Validate Phone Number
   var Phone = document.getElementById("phone").value;
   if (!Phone) {
     isValid = false;
     document.getElementById("emptyPhone").style.display = "block";
+  }
+  if (Phone && !/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(Phone)) {
+    isValid = false;
+    document.getElementById("phoneNot10Digits").style.display = "block";
   }
 
   if (isValid) {
@@ -90,4 +106,8 @@ function reset() {
   document.getElementById("emptySelectState").style.display = "none";
   document.getElementById("emptyZipcode").style.display = "none";
   document.getElementById("emptyPhone").style.display = "none";
+  document.getElementById("zipNot5Digits").style.display = "none";
+  document.getElementById("phoneNot10Digits").style.display = "none";
+  document.getElementById("emailNoAnnotation").style.display = "none";
+  document.getElementById("passwordTooLong").style.display = "none";
 }

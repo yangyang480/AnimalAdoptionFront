@@ -8,6 +8,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="../styles/login.css">
     <script src="../javascripts/login.js"></script>
+    <script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,11 +16,43 @@
         <div class="main">
             <p class="sign">Sign in</p>
             <form class="form">
-                <input id="username" class="username " name="username" type="text" placeholder="Username"></input>
-                <input id="password" class="password" name="password" type="password" placeholder="Password"></input>
+                <div class="form-field">
+                    <input id="username" class="username " name="username" type="text" placeholder="Email"></input>
+                    <div id="emptyUsername" class="invalid-feedback">
+                        Please enter an email
+                    </div>
+                    <div id="usernameNoAnnotation" class="invalid-feedback">
+                        Email should have @ .
+                    </div>
+                </div>
+
+                <div class="form-field"> 
+                    <input id="password" class="password" name="password" type="password"
+                        placeholder="Password"></input>
+                    <div id="emptyPassword" class="invalid-feedback">
+                        Please enter a password
+                    </div>
+                    <div id="passwordTooLong" class="invalid-feedback">
+                        6 ~ 20 with at least one numeric digit, one uppercase and one lowercase
+                    </div>
+                </div>
+
+
+
+
                 <a class="submit" onclick="validate();">Sign in</a>
                 <p class="forgot"><a href="#">Forgot Password?</a></p>
             </form>
+            <div id="iconHomeContainer">
+                <div id="iconHomeWhitespace"></div>
+                <div id="homeLink">
+                    <a class="back-home" href="home.html"><i class="home fa-solid fa-house"></i></a>
+                </div>
+                <div class="hover-text">
+                    <span title="home link">Back to home</span>
+                </div>
+            </div>
+
         </div>
         <div class="create-new">
             <p>Don't have a account yet?</p>
@@ -34,4 +67,5 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

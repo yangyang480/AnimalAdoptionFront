@@ -31,6 +31,7 @@ body {
 
   .row.title {
     height: 2em;
+    font-size: 20px;
   }
 
   #footer {
