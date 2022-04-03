@@ -172,6 +172,7 @@
             var tableTbodyInnerHTML = "";
 
             hospitalData.forEach(value => {
+                //The search() method returns -1 if no match is found
                 if (searchTerm === undefined || value.name.search(searchTerm) != -1) {
                     tableTbodyInnerHTML += "<tr><th scope='row'>" + value.id + "</th><td>" + value.name + "</td><td><a href='#'>link" + value.link + "</a></td></tr>"
                 }
