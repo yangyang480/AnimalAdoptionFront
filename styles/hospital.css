@@ -1,3 +1,13 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  flex: auto;
+}
+
 .hf {
     background-color: #f4d3cf;
   }

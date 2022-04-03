@@ -22,4 +22,4 @@ In Hospital page you can search the hospital, and will show the list of hospiatl
 | forms | flex | loops |
 | Dropdown | ... | collections |
 | different types of content | ... | events |
-| tables | ... | ... |
+| tables | ... | callback |
