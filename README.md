@@ -23,3 +23,11 @@ In Hospital page you can search the hospital, and will show the list of hospiatl
 | Dropdown | ... | collections |
 | different types of content | ... | events |
 | tables | ... | callback |
+
+
+## What I learned?
+1. How to use regex validation
+2. How to show and hide elements
+3. Differents between getElementById and getElementsById
+4. How to use bootstrap and change defualt style
+5. What is callback

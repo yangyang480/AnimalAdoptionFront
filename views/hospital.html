@@ -53,11 +53,11 @@
                     <div class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                             id="hospitalSearchBox">
-                        <button class="btn btn-outline-success"
-                            onclick="searchHospitals()">Search</button>
+                        <button class="btn btn-outline-success" onclick="searchHospitals()">Search</button>
                     </div>
                 </div>
             </div>
+
             <table class="table" id="hospitalTable">
                 <thead>
                     <tr>
@@ -77,40 +77,35 @@
         </div>
     </div>
 
-        <footer id="footer" class="text-muted py-4">
-            <div class="container text-center">
-                <div class="row title">
-                    <div class="col-6">
-                        Contact
-                    </div>
-                    <div class="col-6">
-                        Follow
-                    </div>
+    <footer id="footer" class="text-muted py-4">
+        <div class="container text-center">
+            <div class="row title">
+                <div class="col-6">
+                    Contact
                 </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        yangyangzhao1213@gmail.com
-                    </div>
-                    <div class="col-6">
-                        <a href="https://www.facebook.com/YangyangTwantwan/"><i class="fa-brands fa-facebook"></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        +1 (838)-200-0616
-                    </div>
-                    <div class="col-6">
-                        <a href="https://www.youtube.com/c/YangyangTwantwan"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
+                <div class="col-6">
+                    Follow
                 </div>
             </div>
-            <!-- <div class="container">
-                <p class="float-end mb-1">
-                    <a href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
-                </p>
-            </div> -->
-        </footer>
+
+            <div class="row">
+                <div class="col-6">
+                    yangyangzhao1213@gmail.com
+                </div>
+                <div class="col-6">
+                    <a href="https://www.facebook.com/YangyangTwantwan/"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    +1 (838)-200-0616
+                </div>
+                <div class="col-6">
+                    <a href="https://www.youtube.com/c/YangyangTwantwan"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -172,26 +167,33 @@
             var tableTbodyInnerHTML = "";
 
             hospitalData.forEach(value => {
-                //The search() method returns -1 if no match is found
+                //The search() method returns -1 if no match is found, != -1 name in the array list, return id, name and link
                 if (searchTerm === undefined || value.name.search(searchTerm) != -1) {
-                    tableTbodyInnerHTML += "<tr><th scope='row'>" + value.id + "</th><td>" + value.name + "</td><td><a href='#'>link" + value.link + "</a></td></tr>"
+                    tableTbodyInnerHTML += "<tr><th scope='row'>" + value.id + "</th><td>" + value.name + "</td><td><a href='#'>link" + value.link
                 }
             });
+            //get the first row of the result
             document.getElementById('hospitalTable').getElementsByTagName('tbody')[0].innerHTML = tableTbodyInnerHTML;
 
+            //if table innerhtml is empty, then we will pass the loading to notfoundcallback and call the nohospiatlfoundcallback function.
             if (tableTbodyInnerHTML === "") {
                 notFoundCallback();
             }
         }
+
+        //give searchbox value to searchterm, pass the searchterm to loadhospital parameter. when we click on the search button this function get called.
         function searchHospitals() {
             var searchTerm = document.getElementById('hospitalSearchBox').value;
             loadHospitalData(searchTerm, noHospitalFoundCallback);
         }
+
         function noHospitalFoundCallback() {
             alert("No hospitals found.");
         }
 
-        loadHospitalData("", () => {});
+        //when we road the page this function get called
+        loadHospitalData("", noHospitalFoundCallback);
+        //A callback is a function passed as an argument to another function.
     </script>
 
 </body>
