@@ -8,7 +8,7 @@ function validate() {
   var email = document.getElementById("email").value;
   if (!email) {
     isValid = false;
-    document.getElementById("emptyEmail").style.display = "block";
+    document.getElementById("emptyEmail").style.display = "block"; 
     //instead of alert we call the block from the html
   }
   if (email && !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {

@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'lobsterregular';
+  src: url('../fonts/lobster-regular-webfont.woff2') format('woff2'),
+       url('../fonts/lobster-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'send_flowersregular';
+  src: url('../fonts/sendflowers-regular-webfont.woff2') format('woff2'),
+       url('../fonts/sendflowers-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -6,11 +22,16 @@ body {
 
 .animal-section {
   flex: auto;
-
 }
 
 .welcome-container {
   background-color: #f4ebf4;
+}
+
+h1 {
+  font-family: 'send_flowersregular';
+  color: rgb(228, 76, 109);
+  font-weight: 200;
 }
 
 .hf {
@@ -28,7 +49,6 @@ a.login.link-primary, a.link-primary {
 
 .fa-brands {
   color: rgb(138, 135, 135);
-
 }
 
 .fa-brands.fa-youtube:hover {
